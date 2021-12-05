@@ -522,7 +522,8 @@ $('#genReport').click( (event) => {
 	)
 
 	
-    pdfMake.createPdf(dd).print();
+    // pdfMake.createPdf(dd).print();
+	pdfMake.createPdf(dd).download("BillSample");
     console.log("Done");
 
 
@@ -533,7 +534,8 @@ $('#genReport').click( (event) => {
 $('#submit').click( (event) => {
     console.log("hello");
     // pdfMake.createPdf(dd).print();
-	pdfMake.createPdf(dd).download();
+	
+	pdfMake.createPdf(dd).download("BillSample");
     console.log("Done");
 });
 
