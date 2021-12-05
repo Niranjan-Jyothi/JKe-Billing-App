@@ -533,7 +533,7 @@ $('#genReport').click( (event) => {
 $('#submit').click( (event) => {
     console.log("hello");
     // pdfMake.createPdf(dd).print();
-	pdfMake.createPdf(dd).open();
+	pdfMake.createPdf(dd).download();
     console.log("Done");
 });
 
