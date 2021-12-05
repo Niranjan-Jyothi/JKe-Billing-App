@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill App</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+   
+
+    <button id="submit">Open</button>
+
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Domestic Bill</h5>
+                        <a class="btn btn-primary" id="dom" data-bs-toggle="modal" href="#Tax_Invoice_details" role="button">Generate  Bill</a>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Non Domestic</h5>
+                        <a class="btn btn-primary" id="nonDom" data-bs-toggle="modal" href="#BillToParty" role="button">Generate Bill</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+        <div class="modal fade" id="BillToParty" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalToggleLabel">Bill To party</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <form>
+                        <div class="mb-3">
+                          <label for="recipient-name" class="col-form-label">Name:</label>
+                          <input id="BillToParty_Name" type="text" value="M/S KERALA STATE COIR CORPORATION LTD" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                          <label for="message-text" class="col-form-label">Address:</label>
+                          <input id="BillToParty_Address" type="text" value="P B No. 191, Factory ward, Alappuzha" class="form-control" id="recipient-name">
+                       
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">GSTIN:</label>
+                            <input id="BillToParty_GSTIN" type="text" value="32AABCT2045G1ZU" class="form-control" id="recipient-name">
+                          </div>
+                          <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">State:</label>
+                            <input id="BillToParty_State" type="text" value="Kerala" class="form-control" id="recipient-name">
+                          </div>
+                          <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Code:</label>
+                            <input id="BillToParty_Code" type="text" value="32" class="form-control" id="recipient-name">
+                          </div>
+                      </form>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-primary" data-bs-target="#Transport_and_Supply" data-bs-toggle="modal" data-bs-dismiss="modal">Next</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          
+          <div class="modal fade" id="Transport_and_Supply" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalToggleLabel2">Transport and Supply</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                          <label for="recipient-name" class="col-form-label">Transport Mode:</label>
+                          <input type="text" id="Transport_and_Supply_Mode" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Vehicle number:</label>
+                            <input type="text" id="Transport_and_Supply_number" class="form-control" id="recipient-name">
+                          </div>
+                          <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Date of Supply:</label>
+                            <input type="text" id="Transport_and_Supply_Date" class="form-control" id="recipient-name">
+                          </div>
+                          <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Place of Supply :</label>
+                            <input type="text" id="Transport_and_Supply_Place" class="form-control" id="recipient-name">
+                          </div>
+                       
+                      </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-target="#BillToParty" data-bs-toggle="modal" data-bs-dismiss="modal">Back</button>
+                    <button class="btn btn-primary" data-bs-target="#Tax_Invoice_details" data-bs-toggle="modal" data-bs-dismiss="modal">Next</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
+          <div class="modal fade" id="Tax_Invoice_details" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalToggleLabel2">Tax Invoice details</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                          <label for="recipient-name" class="col-form-label">Invoice No: </label>
+                          <input type="text"  id="Tax_Invoice_details_No" value="20"  class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Invoice date:</label>
+                            <input type="text"  id="Tax_Invoice_details_date" value="22/04/2020" class="form-control" id="recipient-name">
+                          </div>
+                          <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Reverse Charge (Y/N): </label>
+                            <input type="text"  id="Tax_Invoice_details_Reverse" class="form-control" value="N" id="recipient-name">
+                          </div>
+                          <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">State:</label>
+                            <input type="text" id="Tax_Invoice_details_State" value="Kerala" class="form-control" id="recipient-name">
+                          </div>
+                          <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Code:</label>
+                            <input type="text" id="Tax_Invoice_details_Code" value="32" class="form-control" id="recipient-name">
+                          </div>
+                       
+                      </form>
+                </div>
+                <div class="modal-footer">
+                    <!-- this nuton be rensered depending if user chose domestic or non dom -->
+                    <button id="domesticCondition" class="btn btn-secondary" data-bs-target="#Transport_and_Supply" data-bs-toggle="modal" data-bs-dismiss="modal">Back</button>
+                  <button class="btn btn-primary" data-bs-target="#Total_Products" data-bs-toggle="modal" data-bs-dismiss="modal">Next</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="Total_Products" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalToggleLabel2">Total Products</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                          <label for="recipient-name" class="col-form-label">Enter number of products: </label>
+                          <input type="text" value=3 class="form-control" id="totalProductsNJ">
+                        </div>
+                    
+                      </form>
+                </div>
+                <div class="modal-footer">
+                    
+                    <button  class="btn btn-secondary" data-bs-target="#Tax_Invoice_details" data-bs-toggle="modal" data-bs-dismiss="modal">Back</button>
+                  <button id="totalProductsSubmit" data-bs-target="#Product_Details" class="btn btn-primary" data-bs-toggle="modal" data-bs-dismiss="modal">Next</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+
+
+          <div class="modal fade" id="Product_Details" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalToggleLabel2">Product Details</script></h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id=productForm>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Desc </label>
+                            <input name="prodDesc" type="text"  id="prodDesc" class="form-control" id="recipient-name">
+                          </div>
+                          <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Qty </label>
+                            <input name="prodQty" type="text"  id="prodQty" class="form-control" id="recipient-name">
+                          </div>
+                          <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Rate </label>
+                            <input name="prodRate" type="text"  id="prodRate" class="form-control" id="recipient-name">
+                          </div>
+                          <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Amount </label>
+                            <input name="prodAmount" type="text" disabled  id="prodAmount" class="form-control" id="recipient-name">
+                          </div>
+                          <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Discount </label>
+                            <input name="prodDis" type="text" value=0 id="prodDis" class="form-control" id="recipient-name">
+                          </div>
+                          <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Taxable Value </label>
+                            <input name="prodTaxValue" type="text" disabled id="prodTaxValue" class="form-control" id="recipient-name">
+                          </div>
+                          <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">CGST Rate </label>
+                            <input name="prodTaxCGSTRate" type="text" value=9 id="prodTaxCGSTRate" class="form-control" id="recipient-name">
+                          </div>
+                          <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">CGST Amount </label>
+                            <input name="prodTaxCGSTAmt" type="text" disabled id="prodTaxCGSTAmt" class="form-control" id="recipient-name">
+                          </div>
+                          <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">SGST Rate </label>
+                            <input name="prodTaxSGSTRate" type="text"  value=9 id="prodTaxSGSTRate" class="form-control" id="recipient-name">
+                          </div>
+                          <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">SGST Amount </label>
+                            <input name="prodTaxSGSTAmt" type="text" disabled id="prodTaxSGSTAmt" class="form-control" id="recipient-name">
+                          </div>
+
+                          <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Total</label>
+                            <input name="prodTot" type="text" disabled id="prodTot" class="form-control" id="recipient-name">
+                          </div>
+                      </form>
+                </div>
+                <div class="modal-footer">
+                    
+                  <button id="saveProd" class="btn btn-primary" data-bs-target="#inBetweenProduct" data-bs-toggle="modal" data-bs-dismiss="modal">Save Product</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal" id="inBetweenProduct" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Product Added</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+               
+                <div class="modal-footer">
+                    <!-- Go back w prev data -->
+                  <button  id="modifyAddedProductBtn" data-bs-target="#Product_Details" class="btn btn-secondary" data-bs-toggle="modal" data-bs-dismiss="modal">Go back</button>
+                    <!-- GO back w empty prod data -->
+                  <button  id="save_and_flush_product_form" data-bs-target="#Product_Details" data-bs-toggle="modal" data-bs-dismiss="modal" class="btn btn-primary">Add Next</button>
+                    
+                  <button  id="genReport"  data-bs-toggle="modal" data-bs-dismiss="modal" class="btn btn-primary">Genrate Report</button>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+    
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <!-- Logic for modaLS -->
+    <script src="billGen.js"></script>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.4/pdfmake.min.js" integrity="sha512-vCaf5rysVLu1/zVMefJew+IjqlQibggltPWqeo96XsdyJ4ihR3eEDV1oU60afiRXTGf8DqKUjLs2Q99HCbnjAw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.4/vfs_fonts.min.js" integrity="sha512-BDZ+kFMtxV2ljEa7OWUu0wuay/PAsJ2yeRsBegaSgdUhqIno33xmD9v3m+a2M3Bdn5xbtJtsJ9sSULmNBjCgYw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script src="./logic.js"></script>
+</body>
+</html>
