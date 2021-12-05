@@ -187,11 +187,7 @@ var dd = {
 }
 // pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
-$('#submit').click( (event) => {
-    console.log("hello");
-    pdfMake.createPdf(dd).print();
-    console.log("Done");
-});
+
 
 $('#genReport').click( (event) => {
         
@@ -534,5 +530,10 @@ $('#genReport').click( (event) => {
 });
 
 
-
+$('#submit').click( (event) => {
+    console.log("hello");
+    // pdfMake.createPdf(dd).print();
+	pdfMake.createPdf(docDefinition).open();
+    console.log("Done");
+});
 
