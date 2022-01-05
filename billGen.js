@@ -27,7 +27,7 @@ $( document ).ready(function() {
     // any form ele change
     $('#productForm').change ( (e) => {
         // 1. Prod Amoint
-        document.getElementById("prodAmount").value = parseInt($('#prodQty').val()) * parseInt($('#prodRate').val()) 
+        document.getElementById("prodAmount").value = parseFloat($('#prodQty').val()) * parseFloat($('#prodRate').val()) 
         // 2. Prody amt after dis
         $('#prodTaxValue').val(  $('#prodAmount').val() -  $('#prodDis').val())
         //3. CGST Amount
@@ -35,7 +35,7 @@ $( document ).ready(function() {
         //3. CGST Amount
         $('#prodTaxSGSTAmt').val(  $('#prodTaxSGSTRate').val() * $('#prodTaxValue').val() / 100)
         
-        $('#prodTot').val(  parseInt($('#prodTaxValue').val()) + parseInt($('#prodTaxCGSTAmt').val()) +  parseInt($('#prodTaxSGSTAmt').val()));
+        $('#prodTot').val(  parseFloat($('#prodTaxValue').val()) + parseFloat($('#prodTaxCGSTAmt').val()) +  parseFloat($('#prodTaxSGSTAmt').val()));
         
     
     })
@@ -51,12 +51,12 @@ $( document ).ready(function() {
 
         //console.log("Form Data -> ", data);
 
-        totalQty += parseInt(data.prodQty);
-        totalAmount += parseInt(document.getElementById("prodAmount").value);
-        totalTaxAmt += parseInt($('#prodTaxValue').val());
-        totalCGSTAmt += parseInt($('#prodTaxCGSTAmt').val());
-        totalSGSTAmt += parseInt($('#prodTaxSGSTAmt').val());
-        total += parseInt($('#prodTot').val());
+        totalQty += parseFloat(data.prodQty);
+        totalAmount += parseFloat(document.getElementById("prodAmount").value);
+        totalTaxAmt += parseFloat($('#prodTaxValue').val());
+        totalCGSTAmt += parseFloat($('#prodTaxCGSTAmt').val());
+        totalSGSTAmt += parseFloat($('#prodTaxSGSTAmt').val());
+        total += parseFloat($('#prodTot').val());
 
         tableData.push({
             "No" : productNumber,
@@ -95,13 +95,13 @@ $( document ).ready(function() {
        
        productNumber -= 1;
        
-       totalQty -= parseInt($('#prodQty').val());
-       totalAmount -= parseInt(document.getElementById("prodAmount").value);
-       totalTaxAmt -= parseInt($('#prodTaxValue').val());
-       totalCGSTAmt -= parseInt($('#prodTaxCGSTAmt').val());
-       totalSGSTAmt -= parseInt($('#prodTaxSGSTAmt').val());
-       total -= parseInt($('#prodTot').val());
-
+       totalQty -= parseFloat($('#prodQty').val());
+       totalAmount -= parseFloat(document.getElementById("prodAmount").value);
+       totalTaxAmt -= parseFloat($('#prodTaxValue').val());
+       totalCGSTAmt -= parseFloat($('#prodTaxCGSTAmt').val());
+       totalSGSTAmt -= parseFloat($('#prodTaxSGSTAmt').val());
+       total -= parseFloat($('#prodTot').val());
+       
        if(tableData.length == totalProducts)
             {
                 $('#save_and_flush_product_form').hide();
