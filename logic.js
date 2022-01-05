@@ -525,7 +525,7 @@ $('#genReport').click( (event) => {
 	)
 
 	
-    pdfMake.createPdf(dd).print();
+    //pdfMake.createPdf(dd).print();
 	pdfMake.createPdf(dd).download("BillSample");
     console.log("Done");
 
